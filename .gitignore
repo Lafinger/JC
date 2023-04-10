@@ -1,0 +1,9 @@
+.idea
+.vs
+*Binaries
+*DerivedDataCache
+*Intermediate
+*Saved
+*Developer
+*.sln
+*.sln.DotSettings.user
