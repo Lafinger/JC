@@ -134,16 +134,6 @@ void AJCGameMode::HandleStartingNewPlayer_Implementation(APlayerController* NewP
 	}
 }
 
-AActor* AJCGameMode::ChoosePlayerStart_Implementation(AController* Player)
-{
-	// if (ULyraPlayerSpawningManagerComponent* PlayerSpawningComponent = GameState->FindComponentByClass<ULyraPlayerSpawningManagerComponent>())
- //    {
- //    	return PlayerSpawningComponent->ChoosePlayerStart(Player);
- //    }
-    
-    return Super::ChoosePlayerStart_Implementation(Player);
-}
-
 void AJCGameMode::FinishRestartPlayer(AController* NewPlayer, const FRotator& StartRotation)
 {
 	// if (ULyraPlayerSpawningManagerComponent* PlayerSpawningComponent = GameState->FindComponentByClass<ULyraPlayerSpawningManagerComponent>())

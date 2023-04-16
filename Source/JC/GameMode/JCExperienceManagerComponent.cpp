@@ -232,7 +232,7 @@ void UJCExperienceManagerComponent::StartExperienceLoad()
 	TArray<FName> BundlesToLoad;
 	BundlesToLoad.Add(FJCBundles::Equipped);
 
-	//@TODO: Centralize this client/server stuff into the LyraAssetManager
+	//@TODO: Centralize this client/server stuff into the JCAssetManager
 	const ENetMode OwnerNetMode = GetOwner()->GetNetMode();
 	const bool bLoadClient = GIsEditor || (OwnerNetMode != NM_DedicatedServer);
 	const bool bLoadServer = GIsEditor || (OwnerNetMode != NM_Client);

@@ -39,21 +39,6 @@ class JC_API AJCPlayerState : public AModularPlayerState
 public:
 	AJCPlayerState(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-	// UFUNCTION(BlueprintCallable, Category = "Lyra|PlayerState")
-	// ALyraPlayerController* GetLyraPlayerController() const;
-	UFUNCTION(BlueprintCallable, Category = "JC|PlayerState") // Temp
-	AController* GetJCPlayerController() const;
-
-	// UFUNCTION(BlueprintCallable, Category = "Lyra|PlayerState")
-	// ULyraAbilitySystemComponent* GetLyraAbilitySystemComponent() const { return AbilitySystemComponent; }
-	// virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
-	template <class T>
-	const T* GetPawnData() const { return Cast<T>(PawnData); }
-
-	// void SetPawnData(const UJCPawnData* InPawnData);
-	void SetPawnData(TObjectPtr<const UJCPawnData> InPawnData);
-
 	//~AActor interface
 	virtual void PreInitializeComponents() override;
 	virtual void PostInitializeComponents() override;
@@ -66,6 +51,20 @@ public:
 	// virtual void OnDeactivated() override;
 	// virtual void OnReactivated() override;
 	//~End of APlayerState interface
+
+	// UFUNCTION(BlueprintCallable, Category = "Lyra|PlayerState")
+	// ALyraPlayerController* GetLyraPlayerController() const;
+	UFUNCTION(BlueprintCallable, Category = "JC|PlayerState") // Temp
+	AController* GetJCPlayerController() const;
+
+	// UFUNCTION(BlueprintCallable, Category = "Lyra|PlayerState")
+	// ULyraAbilitySystemComponent* GetLyraAbilitySystemComponent() const { return AbilitySystemComponent; }
+	// virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	
+	template <class T>
+	const T* GetPawnData() const { return Cast<T>(PawnData); }
+	// void SetPawnData(const UJCPawnData* InPawnData);
+	void SetPawnData(TObjectPtr<const UJCPawnData> InPawnData); // Temp
 	
 private:
 	void OnExperienceLoaded(const UJCExperienceDefinition* CurrentExperience);
